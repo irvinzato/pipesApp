@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
 
 import { SharedModule } from './shared/shared.module';
+import { VentasModule } from './ventas/ventas.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    PrimeNgModule
+    PrimeNgModule,
+    VentasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
