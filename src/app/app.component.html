@@ -1,14 +1,4 @@
-<div class="text-layout">
-    <h1> {{ 'Vamos a darle a los pipes' | uppercase }} </h1>
-    <h1> {{ valor | number }} </h1>
-    <h1> {{ obj | json }} </h1>
-</div>
+<!-- Ya lo puedo ver por que fue importado en el modulo de este componente -->
+<app-menu></app-menu>
 
-<button pButton label="Prueba" icon="pi pi-heart" 
-        iconPos="right"
-        class="p-button-help"></button> 
-
-<p-card [header]="nombre | titlecase"
-        subheader="Sub header">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum dolorem ipsum eius cum, pariatur iste, repellat non aut, ipsam natus odit quo blanditiis quod deleniti vero fugit culpa quas officia?
-</p-card>
+<router-outlet></router-outlet>
