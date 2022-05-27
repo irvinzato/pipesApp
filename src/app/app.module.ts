@@ -10,10 +10,12 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { SharedModule } from './shared/shared.module';
 import { VentasModule } from './ventas/ventas.module';
 
-//Cambiar idioma de la app
+//Cambiar idioma de la app Global o solo añadir un idioma
 import localEsMx from '@angular/common/locales/es-MX';
+import localFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData( localEsMx );
+registerLocaleData( localFr );
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ registerLocaleData( localEsMx );
     PrimeNgModule,
     VentasModule
   ],
-  providers: [
+  providers: [  //Esto es para cambiar el idioma de todo el proyecto
     { provide: LOCALE_ID, useValue: 'es-MX' }
   ],
   bootstrap: [AppComponent]
