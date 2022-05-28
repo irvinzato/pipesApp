@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Dios, Cultura } from './../../interfaces/ventas.interfaces';
+
 @Component({
   selector: 'app-ordenar',
   templateUrl: './ordenar.component.html',
@@ -7,8 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdenarComponent implements OnInit {
 
-  name: string = "irving";
   enMayusculas: boolean = true;
+  dioses: Dios[] = [
+    {
+      nombre: 'Chaac',
+      ofensivo: true,
+      cultura: Cultura.maya
+    },
+    {
+      nombre: 'Change',
+      ofensivo: true,
+      cultura: Cultura.china
+    },
+    {
+      nombre: 'Odin',
+      ofensivo: false,
+      cultura: Cultura.nordica
+    },
+    {
+      nombre: 'Tsukoyomi',
+      ofensivo: true,
+      cultura: Cultura.china
+    },
+    {
+      nombre: 'Athenea',
+      ofensivo: false,
+      cultura: Cultura.griega
+    }
+  ]
 
   constructor() { }
 
@@ -17,7 +45,6 @@ export class OrdenarComponent implements OnInit {
 
   cambiar() {
     ( this.enMayusculas ) ? this.enMayusculas = false : this.enMayusculas = true;
-    console.log("variable enMayusculas ", this.enMayusculas);
   }
 
 }
