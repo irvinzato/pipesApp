@@ -6,12 +6,27 @@
 <div class="grid text-layout">
     <div class="col md:col-6 sm:col-12">
         <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
-            Content
+           <p>
+               Saludos {{ nombre }}, es un placer {{ genero | i18nSelect:invitacionObj }} a nuestro evento
+           </p> 
+           <button pButton label="Cambiar nombre" 
+                class="p-button-success p-button-sm" 
+                icon="pi pi-heart" iconPos="right" (click)="cambiarNombre()"></button>
         </p-fieldset>
     </div>
     <div class="col md:col-6 sm:col-12">
         <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
-            Content
+            <p>
+                Actualmente {{ clientes.length | i18nPlural:clientesMap }} 
+            </p>
+            <div class="flex justify-content-between">
+                <button pButton label="Borrar cliente" 
+                class="p-button-help p-button-sm" 
+                icon="pi pi-user-minus" iconPos="right" (click)="borrarCliente()"></button>
+                <button pButton label="Agregar cliente" 
+                class="p-button-help p-button-sm" 
+                icon="pi pi-user-plus" iconPos="right" (click)="agregarCliente()"></button>
+            </div>
         </p-fieldset>
     </div>
 </div>
