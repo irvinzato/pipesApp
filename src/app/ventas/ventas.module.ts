@@ -10,6 +10,7 @@ import { PrimeNgModule } from './../prime-ng/prime-ng.module';
 import { MayusculasPipe } from './pipes/mayusculas.pipe';
 import { OfensivoPipe } from './pipes/ofensivo.pipe';
 import { OrdenarPipe } from './pipes/ordenar.pipe';
+import { CulturaPipe } from './pipes/cultura.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { OrdenarPipe } from './pipes/ordenar.pipe';
     OrdenarComponent,
     MayusculasPipe,
     OfensivoPipe,
-    OrdenarPipe
+    OrdenarPipe,
+    CulturaPipe
   ],
   exports: [
     NumerosComponent,
