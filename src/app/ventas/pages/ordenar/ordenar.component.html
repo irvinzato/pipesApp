@@ -1,3 +1,50 @@
-<div class="text-layout">
-    <p>ordenar works!</p>
+<div class="text-layout mb-3">
+    <h1>Pipes Personalizados</h1>
+    <p>Pipes {{'pRoPios en aplicacion'|mayusculas:enMayusculas}} </p>
+
+    <button pButton label="Cambiar texto" 
+            class="p-button-success p-button-sm" 
+            icon="pi pi-heart" iconPos="right" (click)="cambiar()"></button>
+</div>
+
+<p-toolbar>
+    <div class="p-toolbar-group-left">
+            
+    </div>
+    
+    <div class="p-toolbar-group-right">
+        <button pButton icon="pi pi-sort"
+                label="Por nombre" class="mr-2"
+                (click)="cambiarValor('nombre')">
+        </button>
+        <button pButton icon="pi pi-sort"
+                label="Ofensivo" class="mr-2 p-button-help"
+                (click)="cambiarValor('ofensivo')">
+        </button>
+        <button pButton icon="pi pi-sort"
+                label="Cultura" class="mr-2 p-button-warning"
+                (click)="cambiarValor('cultura')">
+        </button>
+    </div>
+</p-toolbar>
+
+<div class="grid">
+    <div class="col mt-3">
+        <p-table [value]="dioses | ordenar:ordenarCon" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ofensivo</th>
+                    <th>Cultura</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dios>
+                <tr>
+                    <td>{{ dios.nombre }}</td>
+                    <td>{{ dios.ofensivo | ofensivo }}</td>
+                    <td>{{ dios.cultura }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
 </div>
