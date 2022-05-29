@@ -8,6 +8,8 @@ import { OrdenarComponent } from './pages/ordenar/ordenar.component';
 import { PrimeNgModule } from './../prime-ng/prime-ng.module';
 
 import { MayusculasPipe } from './pipes/mayusculas.pipe';
+import { OfensivoPipe } from './pipes/ofensivo.pipe';
+import { OrdenarPipe } from './pipes/ordenar.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MayusculasPipe } from './pipes/mayusculas.pipe';
     NoComunesComponent,
     BasicosComponent,
     OrdenarComponent,
-    MayusculasPipe
+    MayusculasPipe,
+    OfensivoPipe,
+    OrdenarPipe
   ],
   exports: [
     NumerosComponent,

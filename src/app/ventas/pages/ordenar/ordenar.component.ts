@@ -10,6 +10,7 @@ import { Dios, Cultura } from './../../interfaces/ventas.interfaces';
 export class OrdenarComponent implements OnInit {
 
   enMayusculas: boolean = true;
+  ordenarCon: string = '';
   dioses: Dios[] = [
     {
       nombre: 'Chaac',
@@ -45,6 +46,10 @@ export class OrdenarComponent implements OnInit {
 
   cambiar() {
     ( this.enMayusculas ) ? this.enMayusculas = false : this.enMayusculas = true;
+  }
+
+  cambiarValor( valor: string ) {
+    this.ordenarCon = valor;
   }
 
 }
