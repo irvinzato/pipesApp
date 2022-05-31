@@ -1,3 +1,73 @@
-<div class="text-layout">
-    <p>ordenar works!</p>
+<div class="text-layout mb-3">
+    <h1>Pipes Personalizados</h1>
+    <p>Pipes {{'pRoPios en aplicacion'|mayusculas:enMayusculas}} </p>
+
+    <button pButton label="Cambiar texto" 
+            class="p-button-success p-button-sm" 
+            icon="pi pi-heart" iconPos="right" (click)="cambiar()"></button>
+</div>
+
+<p class="text-layout">Nota: La columna cultura se ordena por enumeracion acordada no por alfabeto</p>
+<p-toolbar>
+    <div class="p-toolbar-group-left text-layout">
+        <h4>Tabla con pipes personalizados</h4>
+    </div>
+    
+    <div class="p-toolbar-group-right">
+        <button pButton icon="pi pi-sort"
+                label="Por nombre" class="mr-3"
+                (click)="cambiarValor('nombre')">
+        </button>
+        <button pButton icon="pi pi-sort"
+                label="Ofensivo" class="mr-3 p-button-help"
+                (click)="cambiarValor('ofensivo')">
+        </button>
+        <button pButton icon="pi pi-sort"
+                label="Cultura" class="mr-3 p-button-warning"
+                (click)="cambiarValor('cultura')">
+        </button>
+    </div>
+</p-toolbar>
+
+<div class="grid">
+    <div class="col mt-3">
+        <p-table [value]="dioses | ordenar:ordenarCon" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ofensivo</th>
+                    <th>Cultura</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dios>
+                <tr>
+                    <td>{{ dios.nombre }}</td>
+                    <td>{{ dios.ofensivo | ofensivo }}</td>
+                    <td>{{ dios.cultura | cultura }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+<h2 class="text-layout">Tabla con funciones de Prime Ng</h2>
+<div class="grid">
+    <div class="col mt-3">
+        <p-table [value]="dioses | slice:0" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="nombre">Nombre <p-sortIcon field="nombre"></p-sortIcon></th>
+                    <th pSortableColumn="ofensivo">Ofensivo <p-sortIcon field="ofensivo"></p-sortIcon></th>
+                    <th pSortableColumn="cultura">Cultura <p-sortIcon field="cultura"></p-sortIcon></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dios>
+                <tr>
+                    <td>{{ dios.nombre }}</td>
+                    <td>{{ dios.ofensivo | ofensivo }}</td>
+                    <td>{{ dios.cultura | cultura }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
 </div>
